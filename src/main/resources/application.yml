@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+mybatis:
+  mapper-locations: classpath:/sql/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306
+    username: duynn13
+    password: Nhatduy1998
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  flyway:
+    url: jdbc:mysql://localhost:3306
+    schemas: social-login
+    user: duynn13
+    password: Nhatduy1998
+    locations: classpath:/db/migration
+    out-of-order: true
+
+facebook:
+  url: https://graph.facebook.com/v15.0
+  profile: ${facebook.url}/me
+  fields:
+    - id
+    - name
+    - email
+    - first_name
+    - last_name
+    - middle_name
