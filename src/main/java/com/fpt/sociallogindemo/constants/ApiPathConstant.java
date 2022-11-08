@@ -5,5 +5,5 @@ public class ApiPathConstant {
 
     public static final String SIGN_UP ="/signup";
 
-    public static final String SIGN_IN ="/signin";
+    public static final String LOG_IN ="/login";
 }

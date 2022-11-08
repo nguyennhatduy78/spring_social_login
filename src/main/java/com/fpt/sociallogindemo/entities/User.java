@@ -16,6 +16,6 @@ public class User {
     private String password;
     private String email;
     private String loginType;
-    private String createDatetime;
+    private String createdDatetime;
     private String updatedDatetime;
 }

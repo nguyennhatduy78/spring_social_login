@@ -9,7 +9,7 @@ mybatis:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306
+    url: jdbc:mysql://localhost:3306/social-login
     username: duynn13
     password: Nhatduy1998
   jpa:

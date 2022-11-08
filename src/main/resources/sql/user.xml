@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fpt.sociallogindemo.repositories.UserRepository">
+    <select id="isUserExisted" resultType="java.lang.Boolean" parameterType="java.lang.String">
+        SELECT IF(COUNT(1)>0,TRUE,FALSE)
+        FROM users AS u
+        WHERE u.user_email = #{email}
+    </select>
+    <update id="updateUser" parameterType="com.fpt.sociallogindemo.entities.User">
+        UPDATE users AS u
+        SET u.user_name = #{name}
+            ,u.updated_datetime = now()
+        WHERE u.user_email = #{email}
+    </update>
+    <insert id="insertUser" parameterType="com.fpt.sociallogindemo.entities.User"
+            keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO users(user_uuid, user_name, user_email, user_password, user_login_type, created_datetime, updated_datetime)
+        VALUES (#{uuid}, #{name}, #{email}, #{password}, #{loginType}, now(), now())
+    </insert>
+
+    <select id="selectUserByEmail" resultType="com.fpt.sociallogindemo.entities.User">
+        SELECT u.id AS id
+              ,u.user_uuid AS uuid
+              ,u.user_name AS name
+              ,u.user_email AS email
+              ,u.user_password AS password
+              ,u.user_login_type AS loginType
+              ,DATE(u.created_datetime) AS createdDatetime
+              ,DATE(u.updated_datetime) AS updatedDatetime
+        FROM users AS u
+        WHERE u.user_email = #{email}
+    </select>
+</mapper>

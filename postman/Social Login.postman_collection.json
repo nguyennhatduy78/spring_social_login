@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "c3f75068-20d7-4515-8daf-8587ed9360fe",
+		"name": "Social Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12888493"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"loginType\":\"FB\",\r\n    \"token\": \"EAALibindVAoBADuW9exj4t4rXzhkWqLMuhj6UgU6GekTpNAbd8ClUN2viXw5E6h1K4ZCcrsCln5sv1Y7mpNutST1xHqhYKa8j9DrXcTyyazRZA9mjfvkZBEoZBCbT3mOsaylwVxJ4Kl7URgjcBcEF1rzakCbXwpDhPDN0ZCHaWGA83d2ZCBYCYiwv795pXjOh4eXvSIuxuoxOleoJnJwlVuDfp780yQZBMsNajIHWaH1cZBGiWVbtR7jeR3fWMMwqG4MjJxggeYIwAZDZD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
